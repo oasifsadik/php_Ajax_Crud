@@ -46,25 +46,29 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <table class="table ">
-                            <tbody>
+                        <table class="table table-border shadow">
+                            <thead style="background-color: gray; color:white;">
                                 <tr>
-                                    <th>jisan</th>
-                                    <th>jisan</th>
-                                    <th>jisan</th>
-                                    <th>jisan</th>
-                                    <th>jisan</th>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <td>jisan</td>
-                                    <td>jisan</td>
-                                    <td>jisan</td>
-                                    <td>jisan</td>
-                                    <td>jisan</td>
+                                    <th>#SL</th>
+                                    <th>Employee Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>jisan</td>
+                                    <td>jisan@gmail.com</td>
+                                    <td>019264537</td>
+                                    <td>Active</td>
+                                    <td>
+                                        <a href="" class="btn btn-primary"><i class="fa fa-pen-to-square fa-sm"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

@@ -22,6 +22,12 @@ $(document).ready(function() {
                     ${response}
                  </div>
                 `);
+                $(".msg").fadeOut(2000);
+
+                $("#emp_name").val("");
+                $("#emp_email").val("");
+                $("#emp_phone").val("");
+                $("#emp_status").val("");
             }
         });
     });

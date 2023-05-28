@@ -17,6 +17,7 @@ function insert(){
     if($result)
     {
         echo "Data Insert Successfully";
+        // header("location: index.php");
     }
 }
 ?>
