@@ -14,10 +14,14 @@ $(document).ready(function() {
                 emp_email: email,
                 emp_phone: phone,
                 emp_status: status,
-                actions: "insert"
+                action: "insert"
             },
             success: function(response) {
-                alert(response);
+                $('.msg').html(`
+                <div class="alert alert-success" role="alert">
+                    ${response}
+                 </div>
+                `);
             }
         });
     });
