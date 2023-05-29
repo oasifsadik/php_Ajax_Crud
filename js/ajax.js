@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    //Add employees
     $("#add").click(function() {
         var name = $("#emp_name").val();
         var email = $("#emp_email").val();
@@ -28,7 +29,40 @@ $(document).ready(function() {
                 $("#emp_email").val("");
                 $("#emp_phone").val("");
                 $("#emp_status").val("");
+                show();
             }
         });
+
+    });
+    //show employees
+    show();
+
+    function show() {
+        $.ajax({
+            type: "POST",
+            url: "classes/Process.php",
+            data: {
+                action: "show"
+            },
+            success: function(response) {
+                $(".tbody").html(response);
+            }
+        });
+    }
+
+    //active to inactive
+    $(document).on("click", "#activebtn", function() {
+        var id = $(this).val();
+        $.ajax({
+            url: "classes/Process.php",
+            type: "POST",
+            data: {
+                id: id,
+                action: "activeToInactive"
+            },
+            success: function(response) {
+                show();
+            }
+        })
     });
 });

@@ -57,17 +57,8 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>jisan</td>
-                                    <td>jisan@gmail.com</td>
-                                    <td>019264537</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <a href="" class="btn btn-primary"><i class="fa fa-pen-to-square fa-sm"></i></a>
-                                    </td>
-                                </tr>
+                            <tbody class="tbody">
+                                <!-- table body -->
                             </tbody>
                         </table>
                     </div>
@@ -77,6 +68,7 @@
     </section>
     <!-- js -->
     <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
