@@ -110,13 +110,13 @@
       </div>
       <div class="modal-body">
         <div class="form-group mb-3">
-        <input type="text" class="form-control" name="" id="" placeholder="Enter Employee Name">
+        <input type="text" class="form-control" name="" id="uemp_name" placeholder="Enter Employee Name">
         </div>
         <div class="form-group mb-3">
-        <input type="email" class="form-control" name="" id="" placeholder="Enter Employee Email">
+        <input type="email" class="form-control" name="" id="uemp_email" placeholder="Enter Employee Email">
         </div>
         <div class="form-group mb-3">
-        <input type="text" class="form-control" name="" id="" placeholder="Enter Employee Phone">
+        <input type="text" class="form-control" name="" id="uemp_phone" placeholder="Enter Employee Phone">
         </div>
       </div>
       <div class="modal-footer">

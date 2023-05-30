@@ -31,30 +31,43 @@ function show()
     //using foreach loop for data showing
     $s = 1;
     foreach($result as $employee){ ?>
-        <tr>
-            <td><?php echo $s++ ;?></td>
-            <td><?php echo $employee['emp_name'];?></td>
-            <td><?php echo $employee['emp_email'];?></td>
-            <td><?php echo $employee['emp_phone'];?></td>
-            <td>
-                <?php
+<tr>
+    <td><?php echo $s++ ;?></td>
+    <td><?php echo $employee['emp_name'];?></td>
+    <td><?php echo $employee['emp_email'];?></td>
+    <td><?php echo $employee['emp_phone'];?></td>
+    <td>
+        <?php
                     if($employee['emp_status'] == 1){?>
-                    <button class="btn btn-sm btn-info" id="activebtn" value="<?php echo $employee['id'];?>"><i class="fa-solid fa-user-check"></i></button>
-                    <?php
+        <button class="btn btn-sm btn-info" id="activebtn" value="<?php echo $employee['id'];?>"><i
+                class="fa-solid fa-user-check"></i></button>
+        <?php
                     }else{?>
-                    <button class="btn btn-sm btn-danger" id="Inactivebtn" value="<?php echo $employee['id'];?>"><i class="fa-solid fa-user-xmark"></i></button>
-                <?php
+        <button class="btn btn-sm btn-danger" id="Inactivebtn" value="<?php echo $employee['id'];?>"><i
+                class="fa-solid fa-user-xmark"></i></button>
+        <?php
                     }
                 ?>
-            </td>
-            <td>
-                <button href="" class="btn btn-primary" id="editBtn" value="<?php echo $employee['id'];?>" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen-to-square fa-sm"></i></button>
+    </td>
+    <td>
+        <button href="" class="btn btn-primary" id="editBtn" value="<?php echo $employee['id'];?>"
+            data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen-to-square fa-sm"></i></button>
 
-                <button class="btn btn-danger" id="deleteBtn" value="<?php echo $employee['id'];?>" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
-            </td>
-        </tr>
-    <?php
+        <button class="btn btn-danger" id="deleteBtn" value="<?php echo $employee['id'];?>" data-bs-toggle="modal"
+            data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+<?php
     }
+}
+
+function edit()
+{
+    global $connection;
+    $id = $_POST['id'];
+    $result = $connection->query("SELECT * FROM `employees` WHERE id='$id'");
+    $final = $result->fetch_assoc();
+    echo json_encode($final);
 }
 
 //delete employees

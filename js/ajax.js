@@ -74,8 +74,24 @@ $(document).ready(function() {
     // edit employee
     $(document).on("click", "#editBtn", function() {
         var id = $(this).val();
+        $("#yesUpdate").val(id);
+        $.ajax({
+            type: "POST",
+            url: "classes/Process.php",
+            dataType: "JSON",
+            data: {
+                id: id,
+                action: "edit"
+            },
+            success: function(response) {
+                $("#uemp_name").val(response.emp_name)
+                $("#uemp_email").val(response.emp_email)
+                $("#uemp_phone").val(response.emp_phone)
+            }
+        });
 
     });
+
 
     //active to inactive
     $(document).on("click", "#activebtn", function() {
