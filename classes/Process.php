@@ -42,18 +42,28 @@ function show()
                     <button class="btn btn-sm btn-info" id="activebtn" value="<?php echo $employee['id'];?>"><i class="fa-solid fa-user-check"></i></button>
                     <?php
                     }else{?>
-                    <a href="" class="btn btn-sm btn-dark"><i class="fa-solid fa-user-xmark"></i></a>
+                    <button class="btn btn-sm btn-danger" id="Inactivebtn" value="<?php echo $employee['id'];?>"><i class="fa-solid fa-user-xmark"></i></button>
                 <?php
                     }
                 ?>
             </td>
             <td>
-                <a href="" class="btn btn-primary"><i class="fa fa-pen-to-square fa-sm"></i></a>
-                <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                <button href="" class="btn btn-primary" id="editBtn" value="<?php echo $employee['id'];?>" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen-to-square fa-sm"></i></button>
+
+                <button class="btn btn-danger" id="deleteBtn" value="<?php echo $employee['id'];?>" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
             </td>
         </tr>
     <?php
     }
+}
+
+//delete employees
+
+function delete()
+{
+   global $connection;
+   $id = $_POST['id'];
+   $result = $connection->query("DELETE FROM `employees` WHERE id ='$id'");
 }
 // active to inactive
 
@@ -63,5 +73,13 @@ function activeToInactive()
     $id = $_POST['id'];
 
     $result = $connection->query("UPDATE `employees` SET `emp_status`='0' WHERE id ='$id'");
+}
+
+function InactiveToActive()
+{
+    global $connection;
+    $id = $_POST['id'];
+
+    $result = $connection->query("UPDATE `employees` SET `emp_status`='1' WHERE id ='$id'");
 }
 ?>

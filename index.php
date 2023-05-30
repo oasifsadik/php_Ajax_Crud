@@ -16,7 +16,7 @@
             <div class="employee mt-5">
                 <h1 class="text-center text-primary display-3 mb-5">Ajax Crud </h1>
                 <div class="row">
-                    <div class="col-md-4 border shadow rounded">
+                    <div class="col-md-4 sticky-bottom border shadow rounded">
                         <div class="emp p-5">
                             <div class="msg mb-3">
                                 
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <table class="table table-border shadow">
+                        <table class="table table-border rounded shadow">
                             <thead style="background-color: gray; color:white;">
                                 <tr>
                                     <th>#SL</th>
@@ -76,3 +76,53 @@
 </body>
 
 </html>
+
+<!-- delete modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>আমাকে তুমি মুছে ফেলবা</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">না</button>
+        <button type="button" class="btn btn-primary" id="yesdelete">হ্যাঁ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- edit modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group mb-3">
+        <input type="text" class="form-control" name="" id="" placeholder="Enter Employee Name">
+        </div>
+        <div class="form-group mb-3">
+        <input type="email" class="form-control" name="" id="" placeholder="Enter Employee Email">
+        </div>
+        <div class="form-group mb-3">
+        <input type="text" class="form-control" name="" id="" placeholder="Enter Employee Phone">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="yesUpdate">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

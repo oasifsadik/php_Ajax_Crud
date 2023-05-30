@@ -49,6 +49,33 @@ $(document).ready(function() {
             }
         });
     }
+    //delete employee
+    $(document).on("click", "#deleteBtn", function() {
+        var id = $(this).val();
+        $("#yesdelete").val(id);
+
+    });
+    $(document).on("click", "#yesdelete", function() {
+        var id = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "classes/Process.php",
+            data: {
+                id: id,
+                action: "delete"
+            },
+            success: function(response) {
+                show()
+                $("#deleteModal").modal("hide");
+            }
+        });
+    });
+
+    // edit employee
+    $(document).on("click", "#editBtn", function() {
+        var id = $(this).val();
+
+    });
 
     //active to inactive
     $(document).on("click", "#activebtn", function() {
@@ -59,6 +86,21 @@ $(document).ready(function() {
             data: {
                 id: id,
                 action: "activeToInactive"
+            },
+            success: function(response) {
+                show();
+            }
+        })
+    });
+    //Inactive To Active
+    $(document).on("click", "#Inactivebtn", function() {
+        var id = $(this).val();
+        $.ajax({
+            url: "classes/Process.php",
+            type: "POST",
+            data: {
+                id: id,
+                action: "InactiveToActive"
             },
             success: function(response) {
                 show();
